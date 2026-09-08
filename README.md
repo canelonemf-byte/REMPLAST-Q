@@ -15,37 +15,109 @@ REMPLAST-Q es una plataforma **modular e integrada** de última generación para
 
 **Alcanzar una eficiencia de reducción de microplásticos ≥85%** (partículas >10 μm) en una planta piloto de **5 m³/h de capacidad** mediante validación experimental durante **12 meses continuos**.
 
+### Ventajas Diferenciales
+
+- ✅ **Detección óptica multiespectral**: DLS + Fluorescencia + Turbidez
+- ✅ **Clasificación por IA hibrida**: Random Forest, SVM + Quantum Machine Learning
+- ✅ **Separación selectiva**: Membranas cerámicas funcionalizadas
+- ✅ **Degradación enzimática**: PETasas mutantes + Cutinasas
+- ✅ **Control adaptativo**: PID + Lógica Borrosa + Algoritmos Cuánticos
+- ✅ **Caracterización continua**: FTIR, Raman, GC-MS
+
 ---
 
 ## 🏗️ Arquitectura del Sistema
 
 El sistema consta de **7 módulos integrados**:
 
-1. **D-MOD (Detección Óptica):** DLS + Fluorescencia + Turbidez
-2. **AI-MOD (Clasificación IA):** Random Forest + SVM + QSVM
-3. **SEP-MOD (Separación):** Membranas cerámicas 0.45 μm
-4. **CON-MOD (Concentración):** Ultrafiltración cascada
-5. **DEG-MOD (Degradación):** Enzimas PETasa + Cutinasas
-6. **CHAR-MOD (Caracterización):** FTIR, Raman, GC-MS
-7. **OPT-MOD (Control):** PID Adaptativo + Algoritmos Cuánticos
+```
+┌─────────────────────────────────────────────────────────────┐
+│                   REMPLAST-Q ARCHITECTURE                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  D-MOD (Detection)          AI-MOD (Classification)          │
+│  ├─ DLS (10-1000 nm)        ├─ Random Forest               │
+│  ├─ Fluorescencia           ├─ SVM                         │
+│  └─ Turbidez               └─ QML (QSVM)                  │
+│        ↓                           ↓                         │
+│  ┌────────────────────────────────┐                         │
+│  │   SEP-MOD (Separation)         │  CHAR-MOD               │
+│  │   Membranas cerámicas         │  ├─ FTIR-ATR           │
+│  │   0.45 μm, funcionalizadas     │  ├─ Raman              │
+│  │   Caudal: 5 m³/h              │  └─ GC-MS              │
+│  └──────────┬────────────────────┘                         │
+│             ↓                                               │
+│  CON-MOD (Concentration)                                    │
+│  ├─ Ultrafiltración cascada                                │
+│  └─ Evaporación osmótica                                   │
+│        ↓                                                    │
+│  DEG-MOD (Enzymatic Degradation)                           │
+│  ├─ PETasa W159H/S188Q                                    │
+│  ├─ Cutinasas (LDPE/PVC)                                  │
+│  ├─ Reactor 50 L (30-37°C)                                │
+│  └─ Rendimiento: PET 80-85% en 72h                        │
+│        ↓                                                    │
+│  OPT-MOD (Control & Optimization)                          │
+│  ├─ Control clásico: PID + Fuzzy Logic                    │
+│  ├─ Algoritmos cuánticos: VQE, QAOA                       │
+│  └─ Sistema SCADA + Cloud Quantum                         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 📁 Archivos Principales
+## 📁 Estructura del Repositorio
 
-| Archivo | Descripción | Tarea |
-|---------|-------------|-------|
-| `ARQUITECTURA_SISTEMA.md` | Módulos y especificaciones técnicas | TAREA 1 |
-| `MEJORAS_DOCUMENTACION_TECNICA.md` | Revisión y mejoras de especificaciones | TAREA 2 |
-| `remplast_q_control_system.py` | Sistema de control PLC + Algoritmos IA | TAREA 3 |
-| `PLAN_EJECUCION_PROYECTO.md` | Plan de proyecto, matriz RACI, hitos | TAREA 4 |
-| `PROTOCOLO_VALIDACION_EXPERIMENTAL.md` | Protocolos de ensayo y validación | TAREA 5 |
+```
+REMPLAST-Q/
+├── README.md                                    # Este archivo
+├── ARQUITECTURA_SISTEMA.md                      # TAREA 1: Módulos y especificaciones
+├── MEJORAS_DOCUMENTACION_TECNICA.md             # TAREA 2: Revisión y mejoras
+├── remplast_q_control_system.py                 # TAREA 3: Código de control e IA
+├── PLAN_EJECUCION_PROYECTO.md                   # TAREA 4: Gestión de proyecto
+├── PROTOCOLO_VALIDACION_EXPERIMENTAL.md         # TAREA 5: Protocolos de ensayo
+└── LICENSE                                      # Licencia MIT
+```
 
 ---
 
-## 🎯 Objetivos de Validación
+## 🎯 Especificaciones Técnicas Clave
 
-### Objetivo Principal (12 meses)
+### Módulo de Detección (D-MOD)
+- **Rango DLS:** 10-1000 nm (±5% precisión)
+- **Espectrometría:** 355-805 nm, resolución <1 nm
+- **Sensor de turbidez:** 0-100 NTU
+- **Frecuencia de muestreo:** Cada 15 minutos
+
+### Módulo de Separación (SEP-MOD)
+- **Membranas:** Alúmina (Al₂O₃), 0.45 μm
+- **Funcionalización:** Sulfidrilos (-SH) + Imidazol
+- **Caudal:** 5 m³/h nominal (4.0-6.0 m³/h rango)
+- **Presión diferencial:** 2.0 bar (tolerancia 1.5-2.5 bar)
+- **Vida útil:** 2,000 m³ o 6 meses
+
+### Módulo de Degradación (DEG-MOD)
+- **Enzima primaria:** PETasa mutante W159H/S188Q (Ideonella sakaiensis)
+- **Actividad específica:** 0.35 μmol·min⁻¹·mg⁻¹
+- **Cofactores:** Mn²⁺ (1 mM) + Cu²⁺ (0.1 mM)
+- **Reactor:** 50 L, 37°C ±0.5°C, pH 8.0 ±0.2
+- **Rendimiento esperado:**
+  - PET: 80-85% degradación en 72 horas
+  - HDPE: 45-55% degradación en 96 horas
+  - LDPE: 40-50% degradación en 96 horas
+
+### Módulo de IA (AI-MOD)
+- **Dataset de entrenamiento:** 50,000+ espectros etiquetados
+- **Polímeros clasificados:** PET, HDPE, LDPE, PP, PS, PVC
+- **Precisión target:** ≥92% (matriz de confusión <3%)
+- **Métodos:** Random Forest + SVM (clásico) + QSVM (cuántico)
+
+---
+
+## 📊 Objetivos de Validación (12 meses)
+
+### Objetivo Principal
 ```
 Eficiencia Global ≥ 85% ± 5%
 η = [(C_entrada - C_salida) / C_entrada] × 100
@@ -54,78 +126,127 @@ Volumen procesado: 10,000 m³
 
 ### Objetivos Secundarios
 
-| Objetivo | Target | Tolerancia |
-|----------|--------|----------|
-| Eficiencia captura (SEP-MOD) | ≥90% | ±5% |
-| Precisión IA | ≥92% | ±3% |
-| Degradación PET | ≥80% en 72h | ±5% |
-| Durabilidad membrana | >6 meses | - |
-| Estabilidad enzimática | >80% después 12w | ±10% |
+| Objetivo | Target | Tolerancia | Validación |
+|----------|--------|-----------|-----------||
+| Eficiencia captura (SEP-MOD) | ≥90% | ±5% | Gravimetría + FTIR |
+| Precisión IA | ≥92% | ±3% | Matriz de confusión |
+| Degradación PET | ≥80% en 72h | ±5% | GC-MS + FTIR |
+| Durabilidad membrana | >6 meses | - | CAF test + SEM |
+| Estabilidad enzimática | >80% después 12w | ±10% | Ensayo de actividad |
 
 ---
 
-## 🔧 Instalación Rápida
+## 🔧 Instalación y Uso
 
+### Requisitos Previos
+```bash
+Python 3.9+
+pip, virtualenv
+Hardware: Mínimo 8GB RAM, procesador dual-core
+```
+
+### Instalación
 ```bash
 git clone https://github.com/canelonemf-byte/REMPLAST-Q.git
 cd REMPLAST-Q
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # En Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+### Ejecución del Sistema de Control
+```bash
 python remplast_q_control_system.py
 ```
 
----
-
-## 📊 Especificaciones Clave
-
-### Módulo de Detección (D-MOD)
-- Rango DLS: 10-1000 nm (±5% precisión)
-- Espectrometría: 355-805 nm
-- Muestreo: Cada 15 minutos
-
-### Módulo de Separación (SEP-MOD)
-- Material: Alúmina (Al₂O₃)
-- Tamaño poro: 0.45 μm
-- Caudal: 5 m³/h
-- Presión: 2.0 bar (1.5-2.5 tolerancia)
-
-### Módulo de Degradación (DEG-MOD)
-- Enzima: PETasa W159H/S188Q
-- Reactor: 50 L, 37°C ±0.5°C
-- Rendimiento PET: 80-85% en 72h
+Esto ejecutará:
+- ✅ Test del controlador PID adaptativo
+- ✅ Clasificación de polímeros (RF, SVM)
+- ✅ Simulación de operación piloto
+- ✅ Generación de logs
 
 ---
 
 ## 📈 Fases del Proyecto
 
-**FASE 1 (Meses 1-3):** Comisionamiento  
-**FASE 2 (Meses 4-8):** Operación Piloto  
-**FASE 3 (Meses 9-12):** Validación Final
+### **FASE 1: Comisionamiento (Meses 1-3)**
+- Calibración de sensores ópticos
+- Validación de algoritmos de IA
+- Optimización de parámetros de membrana
+- Pruebas preliminares de degradación
+
+### **FASE 2: Operación Piloto (Meses 4-8)**
+- Procesamiento de 10,000 m³ de efluente
+- Monitoreo continuo de rendimiento
+- Análisis de biofouling y fouling
+- Optimización dinámica de parámetros
+
+### **FASE 3: Validación Final (Meses 9-12)**
+- Análisis de durabilidad de membranas
+- Evaluación de impacto ambiental (LCA)
+- Análisis económico (CAPEX/OPEX)
+- Documentación y escalado comercial
 
 ---
 
-## 💰 Presupuesto Estimado (€280,000)
+## 🧪 Métodos de Validación Analítica
 
-- Equipamiento: €80,000 (29%)
-- Personal: €120,000 (43%)
-- Operación: €50,000 (18%)
-- Análisis: €30,000 (11%)
+| Método | Técnica | Límite Detección | Frecuencia |
+|--------|---------|-----------------|-----------||
+| **Gravimetría** | Filtración + Pesaje | 0.5 mg/L | Cada 24h |
+| **FTIR-ATR** | Espectroscopia IR | 10 μg | Cada 48h |
+| **Fluorescencia** | Excitación 405 nm | 1 μm tamaño | Cada 24h |
+| **Microscopía SEM** | Imagen + EDS | 0.1 μm | 10 muestras/semana |
 
 ---
 
-## 🤝 Autor y Contacto
+## 🤝 Colaboradores y Contacto
 
-**Desarrollador:** [@canelonemf-byte](https://github.com/canelonemf-byte)  
+**Desarrollador Principal:** [@canelonemf-byte](https://github.com/canelonemf-byte)  
 **Email:** canelone.mf@gmail.com  
-**Status:** 🟡 En Desarrollo - Buscando Financiación y Colaboradores
+**Institución:** [Pendiente - Buscar colaboradores académicos/industriales]  
+**EDAR Asociada:** [Pendiente - Convenio]
+
+---
+
+## 💰 Búsqueda de Financiación
+
+El proyecto busca financiación para:
+- **Equipamiento:** ~€80,000 (sensores, bioreactor, analizadores)
+- **Personal:** ~€120,000 (ingenieros, técnicos, analistas)
+- **Operación piloto:** ~€50,000 (reactivos, mantenimiento, energía)
+- **Análisis:** ~€30,000 (caracterización, validación)
+
+**Total 12 meses:** ~€280,000
+
+### Posibles Fuentes de Financiación
+- 🇪🇸 Programas nacionales (CDTI, MICINN)
+- 🇪🇺 Horizonte Europa (Circular Economy, Green Deal)
+- 🏢 Fondos privados (Water Tech, Environmental Tech)
+- 🎓 Convocatorias académicas (I+D+i)
+
+---
+
+## 📚 Referencias Bibliográficas
+
+1. Chen, C-C., et al. (2020). "Enzymatic degradation of poly(ethylene terephthalate)". *Nature Catalysis*, 3(10), 820-828.
+2. Yoshida, S., et al. (2016). "A bacterium that degrades and assimilates poly(ethylene terephthalate)". *Science*, 351(6278), 1196-1199.
+3. Sudhakar, M., et al. (2007). "Biofouling and its prevention in industrial water systems". *International Biodeterioration & Biodegradation*, 60(2), 104-114.
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto está bajo licencia **MIT**.
+Este proyecto está bajo licencia **MIT** (ver [LICENSE](LICENSE)).
 
 ---
 
-**Última actualización:** 2026-09-05 | **Versión:** 1.0 | **Clasificación:** Proyecto Científico - Confidencial
+## 🔐 Confidencialidad y Propiedad Intelectual
+
+**REMPLAST-Q** es un proyecto científico en fase de desarrollo. Los documentos técnicos y código fuente están protegidos bajo confidencialidad académica e industrial.
+
+---
+
+**Última actualización:** 2026-09-05  
+**Versión:** 1.0  
+**Status:** 🟡 En Desarrollo - Buscando Colaboradores y Financiación
