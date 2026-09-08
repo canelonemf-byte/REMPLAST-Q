@@ -25,7 +25,7 @@ Demostrar ≥85% de reducción de microplásticos >10 μm en efluente de EDAR ba
   1. Filtrar 1 L de muestra en membrana de PTFE 0.45 μm
   2. Secar a 60°C durante 4 horas
   3. Pesar muestra (M₁)
-  4. Calciner a 450°C durante 6 horas
+  4. Calcinar a 450°C durante 6 horas
   5. Pesar residuo (M₂)
   6. Microplásticos = M₁ - M₂
 - Frecuencia: Cada 24 horas
@@ -101,7 +101,7 @@ SEP-MOD ──> Retenido ──> CON-MOD ──> DEG-MOD ──> Salida
 #### 4.1 Parámetros del Módulo de Detección (D-MOD)
 
 | Parámetro | Unidad | Rango | Precisión | Frecuencia |
-|-----------|--------|-------|-----------|-----------|
+|-----------|--------|-------|-----------|----------|
 | Tamaño de partícula (DLS) | nm | 10-1000 | ±5% | 15 min |
 | Intensidad fluorescencia | u.a. | 0-4096 | ±10 | 15 min |
 | Turbidez | NTU | 0-100 | ±1 | 15 min |
@@ -117,7 +117,7 @@ SEP-MOD ──> Retenido ──> CON-MOD ──> DEG-MOD ──> Salida
 #### 4.3 Parámetros de Degradación (DEG-MOD)
 
 | Parámetro | Unidad | Target | Precisión |
-|-----------|--------|--------|-----------|
+|-----------|--------|--------|----------|
 | Temperatura | °C | 37 | ±0.5 |
 | pH | - | 8.0 | ±0.2 |
 | Agitación | rpm | 200 | ±10 |
@@ -165,62 +165,15 @@ Criterio: η_global ≥ 85% ± 5%
 
 **Criterio:** Precisión ≥92% con validación cruzada 5-fold
 
-**Matriz de confusión target:**
-```
-            PET   HDPE  LDPE   PP    PS    PVC
-PET         0.94  0.02  0.02  0.01  0.01  0.00
-HDPE        0.01  0.93  0.03  0.02  0.01  0.00
-LDPE        0.01  0.02  0.94  0.02  0.01  0.00
-PP          0.01  0.01  0.01  0.95  0.02  0.00
-PS          0.01  0.01  0.01  0.02  0.94  0.01
-PVC         0.01  0.01  0.01  0.01  0.01  0.95
-```
-
 ---
 
-### 6. PLAN DE ANÁLISIS ESTADÍSTICO
-
-#### 6.1 Cálculo de Eficiencia
-
-```
-Eficiencia en el tiempo:
-η(t) = [(C_in(t) - C_out(t)) / C_in(t)] × 100
-
-Eficiencia acumulada (12 meses):
-η_acum = [∫(C_in - C_out)dt / ∫C_in dt] × 100
-```
-
-#### 6.2 Análisis de Tendencias
-
-- Regresión lineal: Cambio de eficiencia en el tiempo
-- Media móvil (14 días): Suavizado de variabilidad
-- Test ANOVA: Diferencias entre fases operativas
-
-#### 6.3 Control de Calidad
-
-- **Blanco negativo:** Agua ultrapura, 1 por semana
-- **Estándar positivo:** Suspensión poliestireno calibrada
-- **Duplicados:** 10% de muestras
-- **Recuperación:** Standard recovery 90-110%
-
----
-
-### 7. CRONOGRAMA DE VALIDACIÓN
+### 6. CRONOGRAMA DE VALIDACIÓN
 
 | Fase | Duración | Actividades |
-|------|----------|-----------|
+|------|----------|----------|
 | Fase 1: Comisionamiento | Meses 1-3 | Calibración, validación métodos |
 | Fase 2: Piloto continua | Meses 4-8 | Procesamiento 10,000 m³ |
 | Fase 3: Validación final | Meses 9-12 | Análisis durabilidad, resultados |
-
----
-
-### 8. INFORMES Y DELIVERABLES
-
-- **Informes quincenales:** Rendimiento operativo
-- **Informes mensuales:** Análisis estadístico
-- **Informe trimestral:** Avances y correcciones
-- **Informe final:** Validación completa + propuestas futuras
 
 ---
 
